@@ -1,0 +1,17 @@
+-écran d'intro
+-Arrivée sur l'app avec turtle au milieu et commande prete
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+LES OBJETS
+Main : fait fonctionner le jeu 
+Tutle : objet graphique obéissant à action 
+---------------------------------------------------------------------------------------------------------------------------------
+Bonus :
+Sauvegarder dessin
+Ecran d'intro
+Menu de choix (nouveau/reprendre)
