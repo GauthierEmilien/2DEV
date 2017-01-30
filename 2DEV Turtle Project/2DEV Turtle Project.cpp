@@ -23,7 +23,7 @@ int main()
 
 	std::string phrase;
 
-	message.setString("Yo khvlkjlvlmv");
+	message.setString("Yo bite");
 	message.setCharacterSize(40);
 	message.setFillColor(sf::Color::White);
 
