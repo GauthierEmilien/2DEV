@@ -4,11 +4,15 @@
 #include "stdafx.h"
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "Affichage.h"
 
 using namespace std;
 
 int main()
 {
+	Affichage fenetre;
+
+
 	sf::RenderWindow window(sf::VideoMode(1200, 200), "2DEV Projet");
 
 	sf::Text message;
