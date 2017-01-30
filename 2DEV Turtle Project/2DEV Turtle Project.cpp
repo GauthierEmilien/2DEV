@@ -23,7 +23,7 @@ int main()
 
 	std::string phrase;
 
-	message.setString("Yo bite");
+	message.setString("ntr");
 	message.setCharacterSize(40);
 	message.setFillColor(sf::Color::White);
 
