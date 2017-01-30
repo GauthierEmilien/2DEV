@@ -43,6 +43,8 @@ dlldata.c
 # DNX
 project.lock.json
 artifacts/
+Debug/
+.vs/
 
 *_i.c
 *_p.c
@@ -68,14 +70,17 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+*.rc
+*.tlog
+*.lastbuildstate
+*.log
 
 # Chutzpah Test files
 _Chutzpah*
 
 # Visual C++ cache files
 ipch/
-Debug/
-.vs/
+
 *.aps
 *.ncb
 *.opendb
@@ -84,7 +89,6 @@ Debug/
 *.cachefile
 *.VC.db
 *.VC.VC.opendb
-*.rc
 
 # Visual Studio profiler
 *.psess
