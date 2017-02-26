@@ -4,16 +4,16 @@
 #include "stdafx.h"
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "Affichage.h"
+#include "Game.h"
 
 using namespace std;
 
 int main()
 {
-	Affichage fenetre;
+	Game::Start();
 
 
-	sf::RenderWindow window(sf::VideoMode(1200, 200), "2DEV Projet");
+	/*sf::RenderWindow window(sf::VideoMode(1200, 200), "2DEV Projet");
 
 	sf::Text message;
 
@@ -59,7 +59,7 @@ int main()
 		window.clear();
 		window.draw(message);
 		window.display();
-	}
+	}*/
 
 	return 0;
 }
