@@ -8,6 +8,7 @@ void Game::Start()
 {
 	window.create(sf::VideoMode(800, 600), "Turtle Project");
 	gameState = Game::MainMenu;
+	Console console;
 
 	while (!ExitGame())
 		MainLoop();
@@ -15,13 +16,12 @@ void Game::Start()
 	window.close();
 }
 
-void Game::GameMode(sf::Event event)
+void Game::GameMode(sf::Event currentEvent)
 {
 	switch (gameState)
 	{
 	case Game::MainMenu:
-		if (event.type == sf::Event::Closed)
-			gameState = Game::Exit;
+		CommandeEvent(currentEvent);
 		break;
 	case Game::Commande:
 		break;
@@ -34,13 +34,17 @@ void Game::GameMode(sf::Event event)
 
 void Game::MainLoop()
 {
-	sf::Event event;
-	while (window.pollEvent(event))
+	sf::Event currentEvent;
+	while (window.pollEvent(currentEvent))
 	{
-		GameMode(event);
+		if (currentEvent.type == sf::Event::Closed)
+			gameState = Game::Exit;
+
+		GameMode(currentEvent);
 	}
 
 	window.clear();
+	window.draw(console.getTextCommandeAffiche());
 	window.display();
 }
 
@@ -49,5 +53,24 @@ bool Game::ExitGame()
 	return gameState == Game::Exit;
 }
 
+void Game::CommandeEvent(sf::Event currentEvent)
+{
+	switch (currentEvent.type)
+	{
+	case sf::Event::TextEntered:
+		console.setEvent(currentEvent);
+		console.addCharacter();
+		console.eraseCharacter();
+		console.setTextCommandeAffiche();
+		break;
+
+	default:
+		break;
+	}
+}
+
+
+
 Game::GamePhase Game::gameState = MainMenu;
 sf::RenderWindow Game::window;
+Console Game::console;
