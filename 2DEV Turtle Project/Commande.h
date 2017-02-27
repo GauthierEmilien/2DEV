@@ -1,10 +1,9 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <iostream>
 #include <string>
 #include <algorithm>
-#include <fstream>
+#include "Word.h"
 
 class Commande
 {
@@ -14,10 +13,9 @@ public:
 	void split(char c);
 
 private:
-	bool isWordExisting();
-	void wordOrParameter();
 
 	std::string textCommande;
 	std::vector<std::string> listTextCommande;
+	std::vector<Word> listWordCommande;
 };
 
