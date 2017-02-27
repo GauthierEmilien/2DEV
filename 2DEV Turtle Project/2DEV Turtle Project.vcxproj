@@ -150,6 +150,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Commande.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="resource.h" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2DEV Turtle Project.cpp" />
+    <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="stdafx.cpp">

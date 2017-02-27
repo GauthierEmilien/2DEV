@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include <iostream>
+#include "Commande.h"
 
 class Console
 {
@@ -8,7 +9,8 @@ public:
 	Console();
 	
 	bool addCharacter();
-	void eraseCharacter();
+	bool eraseCharacter();
+	void pressEnter();
 
 	void setEvent(sf::Event pevent);
 	void setTextCommandeAffiche();

@@ -2,8 +2,6 @@
 #include "Game.h"
 
 
-
-
 void Game::Start()
 {
 	window.create(sf::VideoMode(800, 600), "Turtle Project");
@@ -59,8 +57,9 @@ void Game::CommandeEvent(sf::Event currentEvent)
 	{
 	case sf::Event::TextEntered:
 		console.setEvent(currentEvent);
-		console.addCharacter();
-		console.eraseCharacter();
+		if (!console.addCharacter())
+			if (!console.eraseCharacter())
+				console.pressEnter();
 		console.setTextCommandeAffiche();
 		break;
 

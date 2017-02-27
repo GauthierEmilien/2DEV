@@ -23,11 +23,23 @@ bool Console::addCharacter()
 	return false;
 }
 
-void Console::eraseCharacter()
+bool Console::eraseCharacter()
 {
 	if (currentEvent.text.unicode == 8) {
 		if (textCommande.size() > 0)
 			textCommande.erase(textCommande.end() - 1, textCommande.end());
+		return true;
+	}
+	return false;
+}
+
+void Console::pressEnter()
+{
+	if (currentEvent.text.unicode == 13) {
+		if (textCommande.size() > 0) {
+			std::cout << "Enter press" << std::endl;
+			Commande commande(textCommande);
+		}
 	}
 }
 

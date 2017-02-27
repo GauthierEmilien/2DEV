@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-	FreeConsole();
+	//FreeConsole();
 	Game::Start();
 
 	return 0;
