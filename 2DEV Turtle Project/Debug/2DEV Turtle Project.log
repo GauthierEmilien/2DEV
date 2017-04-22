@@ -1,3 +1,7 @@
-﻿  Word.cpp
+﻿  Commande.cpp
+d:\emilien\repository\2dev\2dev turtle project\commande.cpp(10): warning C4018: '<' : incompatibilité signed/unsigned
+d:\emilien\repository\2dev\2dev turtle project\commande.cpp(34): warning C4018: '<' : incompatibilité signed/unsigned
+d:\emilien\repository\2dev\2dev turtle project\commande.cpp(41): warning C4018: '<' : incompatibilité signed/unsigned
+d:\emilien\repository\2dev\2dev turtle project\commande.cpp(48): warning C4101: 'e' : variable locale non référencée
   2DEV Turtle Project.vcxproj -> D:\Emilien\Repository\2DEV\2DEV Turtle Project\Debug\2DEV Turtle Project.exe
   2DEV Turtle Project.vcxproj -> D:\Emilien\Repository\2DEV\2DEV Turtle Project\Debug\2DEV Turtle Project.pdb (Partial PDB)

@@ -9,6 +9,11 @@ class Word
 public:
 	Word(std::string pvalue);
 	~Word();
+	int getHasParameter();
+	std::string getPorW();
+	std::string getValue();
+	void setParameter(int p);
+	int getParameter();
 
 private:
 	std::string wordOrParameter();
@@ -16,6 +21,7 @@ private:
 
 	std::string value;
 	std::string PorW;
-	bool hasParameter;
+	int hasParameter;
+	int parameter;
 };
 
