@@ -38,7 +38,7 @@ void Console::pressEnter()
 	if (currentEvent.text.unicode == 13) {
 		if (textCommande.size() > 0) {
 			std::cout << "Enter press" << std::endl;
-			Commande commande(textCommande);	
+			Commande commande(textCommande);
 		}
 	}
 }

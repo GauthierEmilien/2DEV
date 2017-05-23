@@ -20,6 +20,7 @@ Commande::~Commande()
 
 void Commande::split(char c)
 {
+	trim(textCommande);
 	textCommande += c;
 	std::transform(textCommande.begin(), textCommande.end(), textCommande.begin(), ::toupper);
 	while (textCommande.size() > 0) {
@@ -30,10 +31,18 @@ void Commande::split(char c)
 	}
 }
 
+
+
 void Commande::createWords()
 {
 	for (int i = 0; i < listTextCommande.size(); i++) {
-		listWordCommande.push_back(Word(listTextCommande[i]));
+		if (listTextCommande[i].empty()) {
+			listTextCommande.erase(listTextCommande.begin() + i);
+			i--;
+		}
+		else {
+			listWordCommande.push_back(Word(listTextCommande[i]));
+		}
 	}
 }
 
@@ -52,6 +61,22 @@ void Commande::ifWordHasParameter()
 			}
 		}
 	}
+}
+
+inline void Commande::ltrim(std::string & s)
+{
+	s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
+}
+
+inline void Commande::rtrim(std::string & s)
+{
+	s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+}
+
+inline void Commande::trim(std::string & s)
+{
+	ltrim(s);
+	rtrim(s);
 }
 
 
