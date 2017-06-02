@@ -5,14 +5,16 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <Windows.h>
-#include "Game.h"
+#include "ConsoleNew.h"
 
 using namespace std;
+extern Turtle turtle;
 
 int main()
 {
-	//FreeConsole();
-	Game::Start();
+	FreeConsole();
+	ConsoleNew console(1000, 600);
+	console.play();
 
 	return 0;
 }
