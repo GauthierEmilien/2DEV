@@ -13,12 +13,13 @@ ConsoleNew::~ConsoleNew()
 
 void ConsoleNew::play()
 {
-	RenderWindow fenetre(VideoMode(WINDOW_SIZE_X, WINDOW_SIZE_Y, 32), "Turtle Project");
+	RenderWindow fenetre(VideoMode(WINDOW_SIZE_X, WINDOW_SIZE_Y, 32), "LOGO");
 	fenetre.setFramerateLimit(120);
 
 	lineText = loadFont();
 	lineProc = loadFont();
 	lineProc.setString("");
+	fond = Color(0, 0, 0);
 
 	historyIndex = 0;
 	int gameState = 0;
@@ -133,13 +134,14 @@ int ConsoleNew::turtleAnimation(int gameState, RenderWindow & fenetre)
 	}
 
 	fraps += 1;
-	testRegex::categoriseCommande(numComm, tabCommande, turt, fraps, graph);
+	testRegex::categoriseCommande(numComm, tabCommande, turt, fraps, graph, fond);
 
 	if (numComm == tabCommande.size()) {
 		textCommande = "";
 		lineText.setString("? ");
 		numComm = 0;
 		gameState = 0;
+		testRegex::prepareHistory();
 	}
 
 	draw(fenetre);
@@ -149,10 +151,10 @@ int ConsoleNew::turtleAnimation(int gameState, RenderWindow & fenetre)
 
 void ConsoleNew::draw(RenderWindow & fenetre)
 {
-	fenetre.clear(Color::Black);
+	fenetre.clear(fond);
 	graph.draw(fenetre, turt.getEpaisseur());
 	if (turt.getShowing()) {
-		fenetre.draw(turt.draw());
+		turt.draw(fenetre, fond);
 	}
 	if (editProc) {
 		fenetre.draw(lineProc);

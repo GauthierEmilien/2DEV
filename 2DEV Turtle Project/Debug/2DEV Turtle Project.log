@@ -1,4 +1,16 @@
-﻿  ConsoleNew.cpp
-d:\emilien\repository\2dev\2dev turtle project\consolenew.cpp(208): warning C4018: '<' : incompatibilité signed/unsigned
+﻿  testRegex.cpp
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(45): warning C4129: '#' : caractère de séquence d'échappement non reconnu
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(53): warning C4129: '#' : caractère de séquence d'échappement non reconnu
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(78): warning C4129: '#' : caractère de séquence d'échappement non reconnu
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(80): warning C4129: '#' : caractère de séquence d'échappement non reconnu
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(81): warning C4129: '#' : caractère de séquence d'échappement non reconnu
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(101): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(102): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(169): warning C4018: '<' : incompatibilité signed/unsigned
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(178): warning C4018: '<' : incompatibilité signed/unsigned
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(191): warning C4018: '<' : incompatibilité signed/unsigned
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(240): warning C4018: '<' : incompatibilité signed/unsigned
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(244): warning C4018: '<' : incompatibilité signed/unsigned
+d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(290): warning C4018: '<' : incompatibilité signed/unsigned
   2DEV Turtle Project.vcxproj -> D:\Emilien\Repository\2DEV\2DEV Turtle Project\Debug\2DEV Turtle Project.exe
   2DEV Turtle Project.vcxproj -> D:\Emilien\Repository\2DEV\2DEV Turtle Project\Debug\2DEV Turtle Project.pdb (Partial PDB)

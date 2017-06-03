@@ -3,6 +3,7 @@
 #include <math.h>
 
 const double PI = 3.14159265;
+using namespace sf;
 
 class Turtle
 {
@@ -21,24 +22,25 @@ public:
 	void turnRight(int pangle);
 	void turnLeft(int pangle);
 	void setEpaisseur(int ep);
-	int getEpaisseur();
+	void setPosX(int x);
+	void setPosY(int y);
 
 	void center();
 
 	float getPosX();
 	float getPosY();
-	sf::Color getColor();
+	Color getColor();
 	bool getShowing();
 	bool getPainting();
-	sf::CircleShape draw();
+	void draw(RenderWindow & window, Color fond);
 	int getAngle();
-
+	int getEpaisseur();
 
 private:
 	void hexaToColor();
 	float posX;
 	float posY;
-	sf::Color color;
+	Color color;
 	bool showing;
 	bool painting;
 	int angle;

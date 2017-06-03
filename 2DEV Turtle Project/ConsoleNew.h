@@ -30,6 +30,7 @@ private:
 
 	sf::Text loadFont();
 	Font font;
+	Color fond;
 
 	const int WINDOW_SIZE_X;
 	const int WINDOW_SIZE_Y;

@@ -78,6 +78,16 @@ void Turtle::setEpaisseur(int ep)
 	epaisseur = ep;
 }
 
+void Turtle::setPosX(int x)
+{
+	posX = x;
+}
+
+void Turtle::setPosY(int y)
+{
+	posY = y;
+}
+
 int Turtle::getEpaisseur()
 {
 	return epaisseur;
@@ -95,7 +105,7 @@ void Turtle::penUp()
 	painting = false;
 }
 
-sf::Color Turtle::getColor()
+Color Turtle::getColor()
 {
 	return color;
 }
@@ -110,15 +120,32 @@ bool Turtle::getPainting()
 	return painting;
 }
 
-sf::CircleShape Turtle::draw()
+void Turtle::draw(RenderWindow & window, Color fond)
 {
-	sf::CircleShape shape(15, 3);
-	shape.setFillColor(color);
-	shape.setOrigin(15, 15);
-	shape.setPosition(posX, posY);
-	shape.setRotation(angle);
+	ConvexShape shape;
+	shape.setPointCount(3);
+	shape.setPoint(0, Vector2f(12.5, 0));
+	shape.setPoint(1, Vector2f(5, 15));
+	shape.setPoint(2, Vector2f(20, 15));
 
-	return shape;
+	CircleShape circle(7.5);
+	circle.setOrigin(-5, -7.5);
+
+	RenderTexture renderTexture;
+	renderTexture.create(25, 25);
+	renderTexture.clear(fond);
+	renderTexture.draw(shape);
+	renderTexture.draw(circle);
+	renderTexture.display();
+
+	const Texture& texture = renderTexture.getTexture();
+
+	Sprite sprite(texture);
+	sprite.setColor(color);
+	sprite.setPosition(posX, posY);
+	sprite.setRotation(angle);
+
+	window.draw(sprite);
 }
 
 int Turtle::getAngle()

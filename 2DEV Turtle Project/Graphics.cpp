@@ -32,3 +32,11 @@ void Graphics::clearPoint()
 {
 	allPoint.clear();
 }
+
+void Graphics::back(int nb)
+{
+	for (int i = 0; i < nb; i++)
+	{
+		allPoint.pop_back();
+	}
+}

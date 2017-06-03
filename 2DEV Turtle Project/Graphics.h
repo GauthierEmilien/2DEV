@@ -14,6 +14,7 @@ public:
 	void draw(RenderWindow &fenetre, int ep);
 	void addPoint(Point p);
 	void clearPoint();
+	void back(int nb);
 
 private:
 	vector<Point> allPoint;
