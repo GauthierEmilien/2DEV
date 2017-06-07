@@ -30,6 +30,7 @@ public:
 	static string checkIfProcedure(string commande, bool editProc);
 	static vector<string> getParameterFromProc(string reg, string commande, bool editProc, int i);
 	static string replaceParameterByValue(string commande, int i, vector<string> params);
+	static void find_and_replace(string &source, string const& find, string const& replace);
 	static string testRepete(string commande);
 	static void testProcedure(string commande);
 	static void prepareHistory();

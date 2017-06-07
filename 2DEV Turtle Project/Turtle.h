@@ -9,6 +9,7 @@ class Turtle
 {
 public:
 	Turtle();
+	Turtle(Color fond);
 	~Turtle();
 	void move(int dist);
 
@@ -37,7 +38,6 @@ public:
 	int getEpaisseur();
 
 private:
-	void hexaToColor();
 	float posX;
 	float posY;
 	Color color;
@@ -45,5 +45,6 @@ private:
 	bool painting;
 	int angle;
 	int epaisseur;
+	Texture texture;
 };
 

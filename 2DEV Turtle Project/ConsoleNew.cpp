@@ -21,6 +21,8 @@ void ConsoleNew::play()
 	lineProc.setString("");
 	fond = Color(0, 0, 0);
 
+	turt = Turtle(fond);
+
 	historyIndex = 0;
 	int gameState = 0;
 	fraps = 0;

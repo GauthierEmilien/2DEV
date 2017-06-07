@@ -4,6 +4,10 @@
 
 Turtle::Turtle()
 {
+}
+
+Turtle::Turtle(Color fond)
+{
 	color = sf::Color(255, 255, 255);
 	posX = 500;
 	posY = 300;
@@ -11,6 +15,25 @@ Turtle::Turtle()
 	showing = true;
 	painting = true;
 	epaisseur = 3;
+	ConvexShape shape;
+	shape.setPointCount(3);
+	shape.setPoint(0, Vector2f(12.5, 0));
+	shape.setPoint(1, Vector2f(5, 15));
+	shape.setPoint(2, Vector2f(20, 15));
+
+	CircleShape circle(7.5);
+	circle.setOrigin(-5, -7.5);
+
+	RenderTexture renderTexture;
+	renderTexture.create(25, 25);
+	renderTexture.clear(fond);
+	renderTexture.draw(shape);
+	renderTexture.draw(circle);
+	renderTexture.display();
+
+	texture = Texture(renderTexture.getTexture());
+
+	
 }
 
 
@@ -122,28 +145,11 @@ bool Turtle::getPainting()
 
 void Turtle::draw(RenderWindow & window, Color fond)
 {
-	ConvexShape shape;
-	shape.setPointCount(3);
-	shape.setPoint(0, Vector2f(12.5, 0));
-	shape.setPoint(1, Vector2f(5, 15));
-	shape.setPoint(2, Vector2f(20, 15));
-
-	CircleShape circle(7.5);
-	circle.setOrigin(-5, -7.5);
-
-	RenderTexture renderTexture;
-	renderTexture.create(25, 25);
-	renderTexture.clear(fond);
-	renderTexture.draw(shape);
-	renderTexture.draw(circle);
-	renderTexture.display();
-
-	const Texture& texture = renderTexture.getTexture();
-
-	Sprite sprite(texture);
+	Sprite sprite = Sprite(texture);
 	sprite.setColor(color);
 	sprite.setPosition(posX, posY);
 	sprite.setRotation(angle);
+	sprite.setOrigin(12.5, 12.5);
 
 	window.draw(sprite);
 }
@@ -151,8 +157,4 @@ void Turtle::draw(RenderWindow & window, Color fond)
 int Turtle::getAngle()
 {
 	return angle;
-}
-
-void Turtle::hexaToColor()
-{
 }

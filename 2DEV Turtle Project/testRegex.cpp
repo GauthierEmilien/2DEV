@@ -17,21 +17,29 @@ vector<string> testRegex::commandeIsOk(string commande, bool & editProc)
 	if (allProcedures.size() > 0) {
 		commande = checkIfProcedure(commande, editProc);
 	}
-	//REPETE
-	if (regex_match(commande, regex("REPETE ([0-9]+|:[a-z0-9_]+) \\[(.+)\\]"))) {	
-		commande = testRepete(commande);
-		
-	} //PROCEDURE
-	else if (regex_match(commande, regex("POUR ([a-z0-9_]+)( :[a-z0-9_]+)*"))) {
-		testProcedure(commande);
-		editProc = true;
-		tabCommande.push_back("procedure");
-	}
-	else if (regex_match(commande, regex("^FIN$"))) {
+	if (!editProc) {
+		//REPETE
+		if (regex_match(commande, regex("REPETE ([0-9]+|:[a-z0-9_]+) \\[(.+)\\]"))) {
+			commande = testRepete(commande);
+
+		} //PROCEDURE
+		else if (regex_match(commande, regex("POUR ([a-z0-9_]+)( :[a-z0-9_]+)*"))) {
+			testProcedure(commande);
+			editProc = true;
+			tabCommande.push_back("procedure");
+		}
+	} 
+	if (regex_match(commande, regex("^FIN$"))) {
 		editProc = false;
 	}
 	
-	tabCommande = prepareCommande(commande, editProc);
+	//if (tabCommande.empty()) {
+	if (!editProc) {
+		tabCommande = prepareCommande(commande, editProc);
+	}
+	else {
+		tabCommande.push_back(commande);
+	}
 
 	return tabCommande;
 }
@@ -143,12 +151,14 @@ void testRegex::commandeWithoutParam(Turtle & turt, string word, Graphics & grap
 		turt.center();
 	}
 	else if (word == "RA") {
-		graph.back(nbPtsHistory.back());
-		nbPtsHistory.pop_back();
-		turt.setPosX(posXHistory.back());
-		turt.setPosY(posYHistory.back());
-		posXHistory.pop_back();
-		posYHistory.pop_back();
+		if (nbPtsHistory.size() > 0) {
+			graph.back(nbPtsHistory.back());
+			nbPtsHistory.pop_back();
+			turt.setPosX(posXHistory.back());
+			turt.setPosY(posYHistory.back());
+			posXHistory.pop_back();
+			posYHistory.pop_back();
+		}
 	}
 }
 
@@ -243,18 +253,19 @@ string testRegex::replaceParameterByValue(string commande, int i, vector<string>
 		bool b(true);
 		for (int k = 0; k < params.size(); k++)
 		{
-			string s("([^ ]*)" + allProcedures[i].getParameters()[k]);
-			if (regex_match(inst, regex("([A-Z]{2,} )" + s))) {
-				inst = regex_replace(inst, regex(s), params[k]);
-				commande += (j > 0) ? " " + inst : inst;
-				b = false;
-			}
+			find_and_replace(inst, allProcedures[i].getParameters()[k], params[k]);
 		}
-		if (b) {
-			commande += (j > 0) ? " " + inst : inst;
-		}
+		commande += (j > 0) ? " " + inst : inst;
 	}
 	return commande;
+}
+
+void testRegex::find_and_replace(string & source, string const & find, string const & replace)
+{
+	for (string::size_type i = 0; (i = source.find(find, i)) != string::npos;) {
+		source.replace(i, find.length(), replace);
+		i += replace.length();
+	}
 }
 
 string testRegex::testRepete(string commande)
@@ -295,6 +306,7 @@ void testRegex::prepareHistory()
 			posYHistory.erase(posYHistory.begin() + i);
 		}
 	}
+	numCommandeHistory = -1;
 }
 
 vector<Procedure> testRegex::allProcedures;
