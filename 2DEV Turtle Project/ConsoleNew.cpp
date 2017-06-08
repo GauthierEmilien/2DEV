@@ -21,7 +21,7 @@ void ConsoleNew::play()
 	lineProc.setString("");
 	fond = Color(0, 0, 0);
 
-	turt = Turtle(fond);
+	turt = Turtle();
 
 	historyIndex = 0;
 	int gameState = 0;
@@ -156,7 +156,7 @@ void ConsoleNew::draw(RenderWindow & fenetre)
 	fenetre.clear(fond);
 	graph.draw(fenetre, turt.getEpaisseur());
 	if (turt.getShowing()) {
-		turt.draw(fenetre, fond);
+		turt.draw(fenetre);
 	}
 	if (editProc) {
 		fenetre.draw(lineProc);

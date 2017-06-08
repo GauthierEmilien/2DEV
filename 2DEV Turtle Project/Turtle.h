@@ -9,7 +9,6 @@ class Turtle
 {
 public:
 	Turtle();
-	Turtle(Color fond);
 	~Turtle();
 	void move(int dist);
 
@@ -33,7 +32,7 @@ public:
 	Color getColor();
 	bool getShowing();
 	bool getPainting();
-	void draw(RenderWindow & window, Color fond);
+	void draw(RenderWindow & window);
 	int getAngle();
 	int getEpaisseur();
 

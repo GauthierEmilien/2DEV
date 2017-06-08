@@ -1,16 +1,7 @@
-﻿  testRegex.cpp
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(53): warning C4129: '#' : caractère de séquence d'échappement non reconnu
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(61): warning C4129: '#' : caractère de séquence d'échappement non reconnu
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(86): warning C4129: '#' : caractère de séquence d'échappement non reconnu
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(88): warning C4129: '#' : caractère de séquence d'échappement non reconnu
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(89): warning C4129: '#' : caractère de séquence d'échappement non reconnu
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(109): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(110): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(179): warning C4018: '<' : incompatibilité signed/unsigned
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(188): warning C4018: '<' : incompatibilité signed/unsigned
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(201): warning C4018: '<' : incompatibilité signed/unsigned
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(250): warning C4018: '<' : incompatibilité signed/unsigned
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(254): warning C4018: '<' : incompatibilité signed/unsigned
-d:\emilien\repository\2dev\2dev turtle project\testregex.cpp(301): warning C4018: '<' : incompatibilité signed/unsigned
+﻿  Turtle.cpp
+d:\emilien\repository\2dev\2dev turtle project\turtle.cpp(44): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+d:\emilien\repository\2dev\2dev turtle project\turtle.cpp(104): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+d:\emilien\repository\2dev\2dev turtle project\turtle.cpp(109): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+d:\emilien\repository\2dev\2dev turtle project\turtle.cpp(149): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
   2DEV Turtle Project.vcxproj -> D:\Emilien\Repository\2DEV\2DEV Turtle Project\Debug\2DEV Turtle Project.exe
   2DEV Turtle Project.vcxproj -> D:\Emilien\Repository\2DEV\2DEV Turtle Project\Debug\2DEV Turtle Project.pdb (Partial PDB)

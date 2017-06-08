@@ -4,10 +4,6 @@
 
 Turtle::Turtle()
 {
-}
-
-Turtle::Turtle(Color fond)
-{
 	color = sf::Color(255, 255, 255);
 	posX = 500;
 	posY = 300;
@@ -21,13 +17,15 @@ Turtle::Turtle(Color fond)
 	shape.setPoint(1, Vector2f(5, 15));
 	shape.setPoint(2, Vector2f(20, 15));
 
-	CircleShape circle(7.5);
-	circle.setOrigin(-5, -7.5);
+	CircleShape triangle(7.5, 3);
+	triangle.setOrigin(-4.5, 1);
+	CircleShape circle(8);
+	circle.setOrigin(-4, -7);
 
 	RenderTexture renderTexture;
-	renderTexture.create(25, 25);
-	renderTexture.clear(fond);
-	renderTexture.draw(shape);
+	renderTexture.create(31, 40);
+	renderTexture.clear(Color::Transparent);
+	renderTexture.draw(triangle);
 	renderTexture.draw(circle);
 	renderTexture.display();
 
@@ -143,7 +141,7 @@ bool Turtle::getPainting()
 	return painting;
 }
 
-void Turtle::draw(RenderWindow & window, Color fond)
+void Turtle::draw(RenderWindow & window)
 {
 	Sprite sprite = Sprite(texture);
 	sprite.setColor(color);
